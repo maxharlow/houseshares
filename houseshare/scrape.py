@@ -90,7 +90,7 @@ class ScrapeGumtree(object):
 			value = value.split(',')
 			value = (float(value[0]), float(value[1]))
 		else:
-			value = (None, None)
+			value = None
 		return value
 
 	def _extract_room_type(self, advert_html):

@@ -9,7 +9,7 @@ class Advert(object):
 		self.title = None
 		self.price = None
 		self.location = None
-		self.location_coordinates = (None, None)
+		self.location_coordinates = None
 		self.room_type = None
 		self.date_available = None
 		self.property_type = None
@@ -42,7 +42,7 @@ class Advert(object):
 			'title': str(self.title),
 			'price': str(self.price),
 			'location': str(self.location),
-			'location_coordinates': str(self.location_coordinates) if self.location_coordinates != (None, None) else '',
+			'location_coordinates': str(self.location_coordinates) if self.location_coordinates is not None else '',
 			'room_type': str(self.room_type),
 			'date_available': str(self.date_available),
 			'property_type': str(self.property_type),
