@@ -20,7 +20,8 @@ class ScrapeGumtree(object):
 		listing_adverts_html = listing_html.find_all('ul', class_='ad-listings')
 		if not listing_adverts_html:
 			return [] # there are no listings on this page -- invalid uri?
-		listing_adverts_html = listing_adverts_html[1].find_all('li', class_='hlisting') # skip featured listings
+		listing_adverts_html = listing_adverts_html[0] if len(listing_adverts_html) == 1 else listing_adverts_html[1]  # skip featured listings
+		listing_adverts_html = listing_adverts_html.find_all('li', class_='hlisting')
 		adverts = []
 		for listing_advert_html in listing_adverts_html:
 			advert_uri = listing_advert_html.find('a', class_='description')['href']
