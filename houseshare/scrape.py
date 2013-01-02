@@ -33,8 +33,11 @@ class ScrapeGumtree(object):
 			time.sleep(1) # please don't ban me
 			self.scrape_advert(advert_uri, advert)
 			adverts.append(advert)
-		next_uri = listing_html.find('li', class_='pag-next').contents[0]['href']
-		return adverts + self.scrape_listing(next_uri, to_listed_date)
+		next_page = listing_html.find('li', class_='pag-next')
+		if (next_page != None):
+			next_page = next_page.contents[0]['href']
+			adverts = adverts + self.scrape_listing(next_page, to_listed_date)
+		return adverts
 
 	def scrape_advert(self, uri, advert=None):
 		print('Scraping Gumtree advert: ' + uri)
