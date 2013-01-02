@@ -36,7 +36,7 @@ class ScrapeGumtree(object):
 		next_page = listing_html.find('li', class_='pag-next')
 		if (next_page != None):
 			next_page = next_page.contents[0]['href']
-			adverts = adverts + self.scrape_listing(next_page, to_listed_date)
+			adverts = adverts + self.scrape_listings(next_page, to_listed_date)
 		return adverts
 
 	def scrape_advert(self, uri, advert=None):
