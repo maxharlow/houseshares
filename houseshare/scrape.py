@@ -73,7 +73,7 @@ class ScrapeGumtree(object):
 		value = value.replace(u',', u'')
 		if 'pm' in value:
 			value = value.replace(u'pm', u'')
-			value = round((int(value) * 12) / 52.2) # convert to weekly
+			value = round((float(value) * 12) / 52.2) # convert to weekly
 		else: # presume weekly
 			value = value.replace(u'pw', u'')
 		return int(value)
