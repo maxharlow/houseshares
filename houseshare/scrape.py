@@ -3,7 +3,6 @@
 import re
 import time
 import datetime
-import urllib
 import urllib2
 from bs4 import BeautifulSoup
 from model import Advert
@@ -11,7 +10,7 @@ from model import Advert
 class ScrapeGumtree(object):
 
 	def scrape_listings_by_location(self, location, to_listed_date):
-		uri = u'http://www.gumtree.com/search?q=&category=double-room-flatshare&search_location=' + urllib.quote(location)
+		uri = u'http://www.gumtree.com/search?q=&category=double-room-flatshare&search_location=' + location
 		return self.scrape_listings(uri, to_listed_date)
 
 	def scrape_listings(self, uri, to_listed_date):
