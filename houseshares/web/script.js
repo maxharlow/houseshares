@@ -1,5 +1,5 @@
 function Houseshares() {
-	var housesharesApiUri = 'http://localhost:5000/api';
+	var housesharesApiUri = '/api/';
 	var markerIcon = 'http://labs.google.com/ridefinder/images/mm_20_red.png';
 	var markerIconSelected = 'http://maps.google.com/mapfiles/marker_orange.png';
 	var map;
@@ -23,7 +23,7 @@ function Houseshares() {
 		showLoadingIndicator(true);
 		var location = document.querySelector('[name=location]').value;
 		var time = document.querySelector('[name=time]').value;
-		var findHousesharesUri = housesharesApiUri + '/' + location.replace(' ', '+') + '/' + time;
+		var findHousesharesUri = housesharesApiUri + location.replace(' ', '+') + '/' + time;
 		var housesharesReq = new XMLHttpRequest();
 		housesharesReq.open('GET', findHousesharesUri);
 		housesharesReq.onload = function (e) {
