@@ -7,7 +7,7 @@ from scrape import ScrapeGumtree
 
 application = Flask(__name__)
 
-@application.route('/houseshares/<location>/<int:to_minutes_ago>')
+@application.route('/api/<location>/<int:to_minutes_ago>')
 def houseshares(location, to_minutes_ago):
 	to_date = datetime.datetime.now() - datetime.timedelta(minutes=to_minutes_ago)
 	gumtree = ScrapeGumtree()

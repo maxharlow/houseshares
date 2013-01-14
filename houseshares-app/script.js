@@ -1,5 +1,5 @@
 function Houseshares() {
-	var housesharesApiUri = 'http://localhost:5000/houseshares';
+	var housesharesApiUri = 'http://localhost:5000/api';
 	var markerIcon = 'http://labs.google.com/ridefinder/images/mm_20_red.png';
 	var markerIconSelected = 'http://maps.google.com/mapfiles/marker_orange.png';
 	var map;
