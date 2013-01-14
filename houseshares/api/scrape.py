@@ -29,7 +29,7 @@ class ScrapeGumtree(object):
 			advert.date_posted = self._extract_date_posted(listing_advert_html)
 			if advert.date_posted < to_listed_date:
 				return adverts
-			time.sleep(1) # please don't ban me
+			#time.sleep(1) # please don't ban me
 			self.scrape_advert(advert_uri, advert)
 			adverts.append(advert)
 		next_page = listing_html.find('li', class_='pag-next')
