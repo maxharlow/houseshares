@@ -5,9 +5,9 @@ import jsonpickle
 from flask import Flask
 from scrape import ScrapeGumtree
 
-app = Flask(__name__)
+application = Flask(__name__)
 
-@app.route('/houseshares/<location>/<int:to_minutes_ago>')
+@application.route('/houseshares/<location>/<int:to_minutes_ago>')
 def houseshares(location, to_minutes_ago):
 	to_date = datetime.datetime.now() - datetime.timedelta(minutes=to_minutes_ago)
 	gumtree = ScrapeGumtree()
