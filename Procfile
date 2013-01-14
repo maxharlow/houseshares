@@ -1,1 +1,1 @@
-web: python houseshares-api
+web: python houseshares

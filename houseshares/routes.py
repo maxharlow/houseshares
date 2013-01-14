@@ -5,7 +5,11 @@ import jsonpickle
 from flask import Flask
 from scrape import ScrapeGumtree
 
-application = Flask(__name__)
+application = Flask(__name__, static_folder='web')
+
+@application.route('/')
+def root():
+	return application.send_static_file('index.html')
 
 @application.route('/api/<location>/<int:to_minutes_ago>')
 def houseshares(location, to_minutes_ago):
