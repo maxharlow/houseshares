@@ -6,10 +6,17 @@ Scrape and parse housemate-wanted advertisments from Gumtree, and output Json. A
 
 Running
 -------
+Set up virtual environment and download dependencies:
+
+    $ virtualenv venv --no-site-packages
+    $ source venv/bin/activate
+    $ pip install -r requirements.txt
+
+This presumes you have `virtualenv`, otherwise install it with Pip: `pip install virtualenv`.To leave the virtual environment, use `deactivate`.
 
 Start everything:
 
-    python houseshares
+    $ python houseshares
 
 or use Foreman: `foreman start`.
 
