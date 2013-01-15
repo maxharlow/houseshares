@@ -1,24 +1,26 @@
 Houseshares
 ===========
 
-Scrape and parse housemate-wanted advertisments from Gumtree, and output Json. A Javascript web app then overlays a nice Google Maps interface.
+Scrape and parse housemate-wanted advertisments from Gumtree, and output Json. A Javascript frontend uses this to produce a nice map-based interface.
 
 
 Running
 -------
 
-Using Python:
-    python housemates
+Start everything:
 
-Or use Foreman:
-    foreman start
-Which is used if you deploy to Heroku.
+    python houseshares
 
-The default port is 5000, though if the environment specifies one, it'll use that instead.
+or use Foreman: `foreman start`.
 
-The web interface is at:
+The default port is 5000, though if the environment specifies one it'll use that instead.
+
+The frontend is at:
+
     /web/index.html
 
-The API:
-    /api/_LOCATION_/_MINUTES AGO_
+Which calls the API:
+
+    /api/LOCATION/MINUTES
+
 eg `localhost:5000/api/london/5` for adverts in London listed in the last five minutes.
